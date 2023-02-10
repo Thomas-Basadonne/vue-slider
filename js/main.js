@@ -34,10 +34,21 @@ createApp({
   },
   methods: {
     prevImage() {
-      this.activeImage--;
+      if (this.activeImage - 1 < 0) {
+        this.activeImage = 4;
+      } else {
+        this.activeImage--;
+      }
     },
     nextImage() {
-      this.activeImage++;
+      if (this.activeImage + 1 > 4) {
+        this.activeImage = 0;
+      } else {
+        this.activeImage++;
+      }
+    },
+    switchToImage(index) {
+      this.activeImage = index;
     },
   },
   created() {},

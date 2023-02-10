@@ -60,6 +60,7 @@
               :src="slide.image"
               v-for="(slide, index) in slides"
               :class="(index == activeImage)? 'active-border' : '' "
+              @click="switchToImage(index)"
             />
           </div>
         </div>
